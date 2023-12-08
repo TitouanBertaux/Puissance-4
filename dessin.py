@@ -29,3 +29,20 @@ def remplirCoord(lst):
         x = 250
 
     return lstCoord
+
+def gravite(lst):
+    rows = len(lst)
+    cols = len(lst[0])
+
+    for j in range(cols):
+        # Traverse each column from bottom to top
+        for i in range(rows - 2, -1, -1):
+            if lst[i][j] != 0:
+                # Find the next available position in the column
+                k = i + 1
+                while k < rows and lst[k][j] == 0:
+                    lst[k][j] = lst[k - 1][j]
+                    lst[k - 1][j] = 0
+                    k += 1
+
+    return lst

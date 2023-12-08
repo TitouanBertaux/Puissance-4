@@ -1,6 +1,7 @@
 import pygame
 import sys
 import dessin
+import Victoire
 
 pygame.init()
 
@@ -18,7 +19,7 @@ plateau = [[0, 0, 0, 0, 0, 0, 0],
            [0, 0, 0, 0, 0, 0, 0]]
 
 lstPos = dessin.remplirCoord(plateau)
-print(lstPos[0][0][0])
+Victoire.posGagnante(plateau)
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -37,7 +38,8 @@ while True:
                                     else:
                                         plateau[i][n] = 2
                                     dessin.couleur = not dessin.couleur
-
+                                    plateau = dessin.gravite(plateau)
+                                    Victoire.posGagnante(plateau)
 
     screen.fill(background_color)
     dessin.dessiner(screen, plateau)
