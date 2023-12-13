@@ -7,7 +7,7 @@ def dessiner(screen, lst):
     for i in range(len(lst)):
         for n in range(len(lst[i])):
             if lst[i][n] == 1:
-                circle = pygame.draw.circle(screen, (0, 115, 252), (x, y), 50)
+                circle = pygame.draw.circle(screen, (255, 235, 67), (x, y), 50)
             if lst[i][n] == 2:
                 circle = pygame.draw.circle(screen, (252, 45, 0), (x, y), 50)
             else:
