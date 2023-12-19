@@ -1,4 +1,5 @@
 # Puissance-4
+Jeu de société puissance 4 codé en python
 
 Comment lancer ? 
 
